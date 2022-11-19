@@ -2,9 +2,7 @@ name: Create .apkg Artifact
 
 on:
   push:
-    branches: [ "main" ]
-  
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
   job_CI:
@@ -20,8 +18,8 @@ jobs:
           cache: 'npm'
       - name: step-run-npm-commands
         run: |
-          npm install -g md2apkg
-          md2apkg -o flashcards.apkg README.md
+          npm ci
+          npm run build
       - name: step-upload-artifacts
         uses: actions/upload-artifact@v3
         id: upload
