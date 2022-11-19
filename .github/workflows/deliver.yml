@@ -4,6 +4,8 @@ on:
   push:
     branches: [ "main" ]
 
+  workflow_dispatch:
+
 jobs:
   job_CI:
     name: CI Pipeline
