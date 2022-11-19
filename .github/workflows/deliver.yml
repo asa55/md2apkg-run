@@ -21,9 +21,9 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-  - uses: actions/upload-artifact@v3
-    id: upload
-    with:
-      path: build
-  - name: 'Echo upload path'
-    run: echo ${{steps.upload.outputs.upload-path}}
+    - uses: actions/upload-artifact@v3
+      id: upload
+      with:
+        path: build
+    - name: 'Echo upload path'
+      run: echo ${{steps.upload.outputs.upload-path}}
