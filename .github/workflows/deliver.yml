@@ -24,13 +24,15 @@ jobs:
         uses: actions/upload-artifact@v3
         id: upload
         with:
-          path: build
-      - name: step-echo-download-path
-        run: echo ${{steps.download.outputs.download-path}}
+          path: |
+            build
+            !build/**.md
       - name: step-download-artifacts
         uses: actions/download-artifact@v3
         id: download
         with:
-          path: build
+          path: |
+            build
+            !build/**.md
       - name: step-echo-download-path
         run: echo ${{steps.download.outputs.download-path}}
