@@ -1,6 +1,6 @@
 # ignore the output of local builds using md2apkg. We'll rely on automations for this generally speaking in GitHub.
 
-/build/**
+/build/**.apkg
 
 ##################################################################################
 
