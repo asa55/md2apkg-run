@@ -1,8 +1,7 @@
 name: Create .apkg Artifact
 
 on:
-  push:
-    workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   job_CI:
@@ -24,11 +23,7 @@ jobs:
         uses: actions/upload-artifact@v3
         id: upload
         with:
-          path: |
-            !.github
-            !.gitignore
-            !LICENSE
-            !**.md
+          path: flashcards.apkg
       - name: step-download-artifacts
         uses: actions/download-artifact@v3
         id: download
