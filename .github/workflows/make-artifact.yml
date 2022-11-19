@@ -1,4 +1,4 @@
-name: Create .apkg Artifact
+name: Create .apkg Artifact v2
 
 on:
   workflow_dispatch:
