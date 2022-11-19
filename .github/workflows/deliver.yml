@@ -1,29 +1,36 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Delivery Pipeline
+name: CI Pipeline
 
 on:
   push:
     branches: [ "main" ]
 
 jobs:
-  deliver:
-
+  job_CI:
+    name: CI Pipeline
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18.x
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build
-    - uses: actions/download-artifact@v3
-      id: download
-      with:
-        path: build
-    - name: 'Echo download path'
-      run: echo ${{steps.download.outputs.download-path}}
+      - name: step-git-checkout
+        uses: actions/checkout@v3
+      - name: step-use-node-LTS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'npm'
+      - name: step-run-npm-commands
+        run: |
+          npm ci
+          npm run build
+      - name: step-upload-artifacts
+        uses: actions/upload-artifact@v3
+        id: upload
+        with:
+          path: build
+      - name: step-echo-download-path
+        run: echo ${{steps.download.outputs.download-path}}
+      - name: step-download-artifacts
+        uses: actions/download-artifact@v3
+        id: download
+        with:
+          path: build
+      - name: step-echo-download-path
+        run: echo ${{steps.download.outputs.download-path}}
