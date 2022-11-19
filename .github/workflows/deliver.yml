@@ -1,8 +1,10 @@
-name: CI Pipeline
+name: Create .apkg Artifact
 
 on:
   push:
     branches: [ "main" ]
+
+  workflow_dispatch:
 
 jobs:
   job_CI:
@@ -18,19 +20,19 @@ jobs:
           cache: 'npm'
       - name: step-run-npm-commands
         run: |
-          npm ci
-          npm run build
+          npm install -g md2apkg
+          md2apkg -o flashcards.apkg README.md
       - name: step-upload-artifacts
         uses: actions/upload-artifact@v3
         id: upload
         with:
           path: |
-            build
-            !build/**.md
+            !.github
+            !.gitignore
+            !LICENSE
+            !**.md
       - name: step-download-artifacts
         uses: actions/download-artifact@v3
         id: download
-        with:
-          path: build
       - name: step-echo-download-path
         run: echo ${{steps.download.outputs.download-path}}
