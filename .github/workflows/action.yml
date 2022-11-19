@@ -8,4 +8,4 @@ jobs:
    runs-on: ubuntu-latest
    steps:
      - uses: actions/checkout@v3
-     - uses: asa55/md2apkg-action@v0.0.0
+     - uses: actions/md2apkg-action@v0.0.0
