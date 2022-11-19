@@ -2,7 +2,7 @@
 
 ## Who is this for?
 
-If you like Anki flashcards, and want to make your own custom decks using Markdown, this repo could be of some use. Fork this repo, edit `flashcards.md`, go to the Actions tab to trigger the conversion, and download the output as a `.apkg` Anki flashcard deck, all from your browser without ever leaving GitHub's website or downloading any tooling. [More detailed instructions are below](#how-do-i-use-it).
+If you like Anki flashcards, and want to make your own custom decks using Markdown, this repo can help. It takes next to no time at all to get up and running. Fork this repo, edit `flashcards.md` to your liking (or not at all if you want to see the demo flashcards I made), go to the Actions tab to trigger the conversion, and download the output as a `.apkg` Anki flashcard deck. You can do all of this from your browser without ever leaving GitHub's website or downloading any tooling. More detailed instructions are below.
 
 ## What does this code do?
 
