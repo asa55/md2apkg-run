@@ -8,7 +8,7 @@ If you like Anki flashcards, and want to make your own custom decks using Markdo
 
 This repo is a thin wrapper around [`md2apkg`](https://github.com/Steve2955/md2apkg) (converts `.md` to the format Anki requires, `.apkg`. [Click here](https://github.com/Steve2955/md2apkg) to navigate to that repo, props to the author). There is a limited feature set, but it's a very clean solution for source control purposes imo and I'm not worried about using Anki's full feature set.
 
-It's possible there is a better way of accomplishing what I'm doing here to trigger the `md2apkg` using GitHub Actions. If I figure that out, you'll see the changes propagated into this project. FYSA
+It's possible there is a better way of accomplishing what I'm doing here to trigger the `md2apkg` using GitHub Actions. If I figure that out, you'll see the changes propagated into this project. The long term vision as far as I can tell will be to wrap `md2apkg` as a reusable action. 
 
 The pain point this repo solves is that `md2apkg` requries you to work locally as far as I can tell. I generally don't like installing tools on my desktop and wanted GitHub Actions to do the heavy lifting for me, hence the creation of `actions-convert-md-into-anki-flashcards`. This repo basically lets GitHub Actions do the heavy lifting.
 

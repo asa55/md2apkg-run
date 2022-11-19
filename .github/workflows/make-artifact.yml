@@ -1,22 +1,24 @@
-name: Create .apkg Artifact v2
+name: Convert flashcards.md to flashcards.apkg
 
 on:
   workflow_dispatch:
 
 jobs:
-  job_CI:
-    name: CI Pipeline
+  job:
+    name: Build Anki Flashcard Deck from .md
     runs-on: ubuntu-latest
     steps:
+      - name: step-git-checkout
+        uses: actions/checkout@v3
       - name: step-use-node-LTS
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
           cache: 'npm'
-      - name: step-run-npm-install
-        run: npm install -g md2apkg
-      - name: step-run-md2apkg
-        run: md2apkg -o flashcards.apkg flashcards.md
+      - name: step-run-npm-commands
+        run: |
+          npm ci
+          npm run build
       - name: step-upload-artifacts
         uses: actions/upload-artifact@v3
         id: upload
