@@ -20,8 +20,6 @@ Optionally, you might want to delete artifacts you don't need anymore (there's a
 
 ## Roadmap
 
-I'm interested in the best ways to either programmatically generate a sensible deck name based on e.g. the GitHub username and repo name, or just lettign users enter it manually, but right now it defaults to the first heading you set in `flashcards.md`.
-
 I'm interested in finding a way to nest `.md` files in e.g. a folder hierarchy, then automatically using that hierarchy to infer / apply tags or subdeck names. This feature is not implemented yet, right now everything is flat under `flashcards.md`, and you have to apply tags manually per the `md2apkg` docs.
 
 This is more generic than `actions-convert-md-into-anki-flashcards` which was so named due to the intent of what I was trying to do going into this.  I may change the project name slightly because at this point I'm realizing this wrapper could probably be abstracted away from the usage itself. Ideally I'd like for this to be a GitHub Action you can call into whatever repo you've created, instead of a repo you fork. Functionally, your repo at that point would have an Actions workflow file, and the markdown file(s) you want converted to `.apkg`.
