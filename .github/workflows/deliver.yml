@@ -2,9 +2,7 @@ name: Create .apkg Artifact
 
 on:
   push:
-    branches: [ "main" ]
-  
-  workflow_dispatch:
+    workflow_dispatch:
 
 jobs:
   job_CI:
