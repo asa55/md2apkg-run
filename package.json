@@ -3,6 +3,6 @@
     "md2apkg": "^1.3.0"
   },
 	"scripts": {
-  "build": "md2apkg -o flashcards.apkg README.md"
+  "build": "md2apkg -o flashcards.apkg flashcards.md"
   }
 }
