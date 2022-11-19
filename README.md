@@ -1,4 +1,4 @@
-# autoconvert-md-to-anki-flashcards
+# actions-convert-md-to-anki-flashcards
 
 ## Who is this for?
 
