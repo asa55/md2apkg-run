@@ -1,10 +1,8 @@
-# docs-as-flashcards
-
-`docs-as-flashcards` contains official documentation, rewritten as flashcards, maintained by yours truly. Docs are dense reads but very important. Rote memorization isn't a replacement for deeper understanding, but it *is* pre-requisite.
+# autoconvert-md-to-anki-flashcards
 
 ## Who is this for?
 
-If you like Anki flashcards, and want to make your own custom decks using Markdown, this repo could be of some use.
+If you like Anki flashcards, and want to make your own custom decks using Markdown, this repo could be of some use. Fork this repo, edit `flashcards.md`, go to the Actions tab to trigger the conversion, and download the output as a `.apkg` Anki flashcard deck, all from your browser without ever leaving GitHub's website or downloading any tooling. [More dtailed instructions are below](#how-do-i-use-it).
 
 ## What does this code do?
 
