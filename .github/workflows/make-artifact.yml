@@ -15,6 +15,20 @@ jobs:
         with:
           node-version: 18.x
           cache: 'npm'
+      - name: step-run-preprocessor
+        run: |
+          touch cat.md
+          printf "# " >> cat.md;
+          cat ./flashcards/DeckName.md >> cat.md;
+          printf "\n\n" >> cat.md;
+          find ./flashcards/ -path "./flashcards/*/**.md" | while read _file; do 
+            _path=${_file%\/*};
+            _tag=$(echo "$_path" | sed "s/\//::/g" | sed "s/\.:://g");
+            _tag="\<\!\-\- md2apkg tags $_tag \-\-\>";
+            sed -i "\@##@a $_tag" $_file;
+            printf "\n\n" >> $_file;
+            cat $_file >> cat.md
+          done
       - name: step-run-npm-commands
         run: |
           npm ci
