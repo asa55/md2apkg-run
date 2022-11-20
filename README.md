@@ -6,12 +6,12 @@
 2. Modify `flashcards.md` directly
 3. Push your changes (i.e. commit directly to main branch)
 4. Click the `Actions` tab
-5. Click "Convert flashcards.md to flashcards.apkg" beneath "All workflows"
-6. Click "Run workflow"
-7. Click "Convert flashcards.md to flashcards.apkg" beneath "workflow runs"
-8. Click "artifact" under "Artifacts produced during runtime"
-  - The artifact is a `.zip` file containing the `flashcards.apkg` Anki flashcard deck, which you just built from `flashcards.md` in the previous steps
-  - You can import `flashcards.apkg` directly into Anki using the desktop or mobile app (you'll just need to unzip/extract it after downloading)
+5. Click `Convert flashcards.md to flashcards.apkg` beneath `All workflows`
+6. Click `Run workflow`
+7. Click `Convert flashcards.md to flashcards.apkg` beneath `workflow runs`
+8. Click `artifact` under `Artifacts produced during runtime`
+  - This will initiate a download of the `.zip` file containing the `flashcards.apkg` Anki flashcard deck, which you just built from `flashcards.md` in the previous steps
+  - You can then import your `flashcards.apkg` directly into Anki using the desktop or mobile app (you'll just need to unzip/extract it after downloading)
 
 ## Who is this for?
 
