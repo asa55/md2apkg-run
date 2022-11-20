@@ -35,8 +35,8 @@ I'm interested in finding a way to nest `.md` files in e.g. a folder hierarchy, 
 
 ## Examples (AnkiDroid screenshots of the results built from `flashcards.md`)
 
-![first flashcard example](./images/1.jpeg)
-![second flashcard example](./images/2.jpeg)
-![third flashcard example](./images/3.jpeg)
-![fourth flashcard example](./images/4.jpeg)
-![fifth flashcard example](./images/5.jpeg)
+![first flashcard example](./images/1.jpg)
+![second flashcard example](./images/2.jpg)
+![third flashcard example](./images/3.jpg)
+![fourth flashcard example](./images/4.jpg)
+![fifth flashcard example](./images/5.jpg)
