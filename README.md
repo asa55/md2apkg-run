@@ -2,7 +2,7 @@
 
 ## Quickstart Guide
 
-1. Fork this repo
+1. Create a new repo from template (use the big green button above)
 2. Modify `flashcards.md` directly
 3. Push your changes (i.e. commit directly to main branch)
 4. Click the `Actions` tab
@@ -27,7 +27,7 @@ The feature set for creating cards is limited compared to what Anki offers, but 
 
 The pain point this repo solves is that `md2apkg` requries you to work locally as far as I can tell. I generally don't like installing tools on my desktop and wanted GitHub Actions to do the heavy lifting for me, hence the creation of `convert-md-into-anki-flashcards`. This repo basically lets GitHub Actions do the heavy lifting.
 
-This repo functions as a template. You'll need to fork a copy and work from that.
+This repo functions as a template. You'll need to create a copy (or a fork) and work from that. One repo corresponds to one deck, but you can apply custom tags per-card. Keep this in mind as you consider how best to structure / author your flashcards.
 
 ## Future
 
