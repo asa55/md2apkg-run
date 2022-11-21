@@ -8,6 +8,10 @@ jobs:
     name: Build Anki Flashcard Deck from .md
     runs-on: ubuntu-latest
     steps:
+      - name: step-define-package-json
+        run: |
+          touch package.json
+          '{ "dependencies": { "md2apkg": "^1.3.0" } }' >> package.json
       - name: step-git-checkout
         uses: actions/checkout@v3
       - name: step-use-node-LTS
@@ -18,13 +22,12 @@ jobs:
       - name: step-run-preprocessor
         run: |
           touch cat.md
-          printf "# " >> cat.md;
-          cat ./flashcards/DeckName.md >> cat.md;
+          cat index.md >> cat.md;
           printf "\n\n" >> cat.md;
-          find ./flashcards/ -path "./flashcards/*/**.md" | while read _file; do 
+          find ./ -path "./**.md" | while read _file; do 
             _path=${_file%\/*};
             _tag=$(echo "$_path" | sed "s/\//::/g" | sed "s/\.:://g");
-            _tag="\<\!\-\- md2apkg tags $_tag \-\-\>";
+            _tag="\<\!\-\- md2apkg tags '$_tag' \-\-\>";
             sed -i "\@##@a $_tag" $_file;
             printf "\n\n" >> $_file;
             cat $_file >> cat.md
@@ -32,7 +35,7 @@ jobs:
       - name: step-run-npm-commands
         run: |
           npm ci
-          npm run build
+          md2apkg -o flashcards.apkg cat.md
       - name: step-upload-artifacts
         uses: actions/upload-artifact@v3
         id: upload
