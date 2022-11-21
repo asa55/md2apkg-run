@@ -25,7 +25,7 @@ jobs:
           touch cat.md
           cat index.md >> cat.md;
           printf "\n\n" >> cat.md;
-           find ./**.md ! \( -path './.github' -prune \) | while read _file; do 
+          find ./**.md ! -path ./cat.md ! -path ./.github/README.md | while read _file; do 
             _path=${_file%\/*};
             _tag=$(echo "$_path" | sed "s/\//::/g" | sed "s/\.:://g");
             _tag="\<\!\-\- md2apkg tags '$_tag' \-\-\>";
