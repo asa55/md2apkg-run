@@ -23,14 +23,19 @@ jobs:
       - name: step-run-preprocessor
         run: |
           touch cat.md
-          cat index.md >> cat.md;
-          printf "\n\n" >> cat.md;
-          find ./**.md ! -path ./index.md ! -path ./cat.md ! -path ./.github/README.md | while read _file; do 
-            _path=${_file%\/*};
-            _tag=$(echo "$_path" | sed "s/\//::/g" | sed "s/\.//g");
-            _tag="\<\!\-\- md2apkg tags '$_tag' \-\-\>";
-            sed -i "\@##@a $_tag" $_file;
-            printf "\n\n" >> $_file;
+          cat index.md >> cat.md
+          printf "\n\n" >> cat.md
+          find ./ -name "*.md" ! -path ./index.md ! -path ./cat.md ! -path ./.github/README.md | while read _file; do 
+            _path=${_file%\/*}
+            _tag=$(echo "$_path" | sed "s/\//::/g" | sed "s/\.//g")
+            while (echo $_tag | grep "::"); do
+              _tag_="\<\!\-\- md2apkg tags $_tag \-\-\>"
+              sed -i "\@##@a $_tag_" $_file
+              _tag="${_tag%::*}"
+            done
+            _tag_='\<\!\-\- md2apkg tags "$_tag" \-\-\>'
+            sed -i "\@##@a $_tag_" $_file
+            printf "\n\n" >> $_file
             cat $_file >> cat.md
           done
       - name: step-run-npm-commands
