@@ -47,7 +47,7 @@ jobs:
         id: upload
         with:
           name: flashcards
-          path: flashcards.apkg
+          path: Deck.apkg
       - name: step-download-artifacts
         uses: actions/download-artifact@v3
         id: download
