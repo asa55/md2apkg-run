@@ -1,4 +1,8 @@
-name: Convert flashcards.md to flashcards.apkg
+name: run md2apkg
+
+author: a.s.augenstein
+
+description: Converts `.md` files in `Deck/` into `Deck.apkg`
 
 on:
   workflow_dispatch:
