@@ -36,7 +36,7 @@ jobs:
       - name: step-run-npm-commands
         run: |
           npm ci
-          md2apkg -o flashcards.apkg cat.md
+          npx md2apkg -o flashcards.apkg cat.md
       - name: step-upload-artifacts
         uses: actions/upload-artifact@v3
         id: upload
