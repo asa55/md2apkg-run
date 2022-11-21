@@ -29,7 +29,7 @@ jobs:
             _path=${_file%\/*}
             _tag=$(echo "$_path" | sed "s/\//::/g" | sed "s/\.::Deck:://g")
             while (echo $_tag | grep "::"); do
-              _tag_="\<\!\-\- md2apkg tags $_tag \-\-\>"
+              _tag_='\<\!\-\- md2apkg tags "$_tag" \-\-\>'
               sed -i "\@##@a $_tag_" $_file
               _tag="${_tag%::*}"
             done
