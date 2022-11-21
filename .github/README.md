@@ -8,16 +8,8 @@
 
 1. Create a new repo from template (use the big green button above)
 2. Edit the Markdown file `Deck/index.md` to include your desired deck name
-  i. Optionally, define flashcards within `Deck/index.md` per the [`md2apkg` docs](https://github.com/Steve2955/md2apkg)
-    - The first line in `index.md` must include a heading defining your desired deck name (e.g. `index.md` > line 1 > `# My Deck Name`)
-    - The subsequent lines can follow the `md2apkg` flashcard definition conventions
-  ii. Optionally, create your own `.md` files and folders underneath `Deck/`
-    - Flashcards defined within `index.md` (or in your own custom `.md` files adjacent to `index.md`) will *not* be tagged
-    - Flashcards defined within your own custom `.md` files in folders you create underneath `Deck/` *will* be tagged
-      - Filenames are ignored, directory names are used as tag names
-      - Nested directories are used to apply nested tags to flashcards
-  iii. You can append your own custom tags by using the `md2apkg` tagging syntax as discussed in the [`md2apkg` docs](https://github.com/Steve2955/md2apkg)
-  iv. If you want to include images, place them anywhere in the folder hierarchy (even your own custom folders) and relative link to them using [GitHub flavored `.md` syntax for images](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#images)
+  - See [`md2apkg` docs](https://github.com/Steve2955/md2apkg) to understand how to write flashcards in Markdown using `md2apkg`
+  - See [md2apkg-run-demo](https://github.com/asa55/md2apkg-run-demo) to see `md2apkg-run` in action, and for more detail on how to construct decks using `md2apkg-run`
 3. Push your changes (i.e. commit directly to main branch)
 4. Click the `Actions` tab
 5. Click `Run md2apkg converter` beneath `All workflows`
