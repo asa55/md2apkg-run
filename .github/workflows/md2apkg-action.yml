@@ -27,14 +27,10 @@ jobs:
           printf "\n\n" >> Deck.md
           find ./Deck/ -name "*.md" | while read _file; do 
             _path=${_file%\/*}
-            _tag=$(echo "$_path" | sed "s/\//::/g" | sed "s/\.::Deck:://g")
-            while (echo $_tag | grep "::"); do
-              _tag_="\<\!\-\- md2apkg tags $_tag \-\-\>"
-              sed -i "\@##@a $_tag_" $_file
-              _tag="${_tag%::*}"
-            done
+            _tag=$(echo "$_path" | sed "s/\//::/g" | sed "s/\.//g" | sed "s/\::Deck//g")
             _tag_="\<\!\-\- md2apkg tags $_tag \-\-\>"
             sed -i "\@##@a $_tag_" $_file
+            _tag="${_tag%::*}"
             printf "\n\n" >> $_file
             cat $_file >> Deck.md
           done
