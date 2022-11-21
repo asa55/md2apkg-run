@@ -1,4 +1,8 @@
-name: Convert flashcards.md to flashcards.apkg
+name: run md2apkg
+
+author: a.s.augenstein
+
+description: Converts `.md` files in `Deck/` into `Deck.apkg`
 
 on:
   workflow_dispatch:
@@ -22,28 +26,36 @@ jobs:
           cache: 'npm'
       - name: step-run-preprocessor
         run: |
-          touch cat.md
-          cat index.md >> cat.md;
-          printf "\n\n" >> cat.md;
-          find ./**.md ! -path ./index.md ! -path ./cat.md ! -path ./.github/README.md | while read _file; do 
-            _path=${_file%\/*};
-            _tag=$(echo "$_path" | sed "s/\//::/g" | sed "s/\.//g");
-            _tag="\<\!\-\- md2apkg tags '$_tag' \-\-\>";
-            sed -i "\@##@a $_tag" $_file;
-            printf "\n\n" >> $_file;
-            cat $_file >> cat.md
+          touch Deck.md
+          cat ./Deck/index.md >> Deck.md
+          printf "\n\n" >> Deck.md
+          find ./Deck/ -name "*.md" | while read _file; do 
+            _path=${_file%\/*}
+            _tag=$(echo "$_path" | sed "s/\//::/g" | sed "s/\.::Deck:://g")
+            while (echo $_tag | grep "::"); do
+              _tag_="\<\!\-\- md2apkg tags $_tag \-\-\>"
+              sed -i "\@##@a $_tag_" $_file
+              _tag="${_tag%::*}"
+            done
+            _tag_='\<\!\-\- md2apkg tags "$_tag" \-\-\>'
+            sed -i "\@##@a $_tag_" $_file
+            printf "\n\n" >> $_file
+            cat $_file >> Deck.md
           done
       - name: step-run-npm-commands
         run: |
           npm ci
-          npx md2apkg -o flashcards.apkg cat.md
+          npx md2apkg -o Deck.apkg Deck.md
       - name: step-upload-artifacts
         uses: actions/upload-artifact@v3
         id: upload
         with:
-          path: flashcards.apkg
+          name: flashcards
+          path: Deck.apkg
       - name: step-download-artifacts
         uses: actions/download-artifact@v3
         id: download
+        with:
+          name: flashcards
       - name: step-echo-download-path
         run: echo ${{steps.download.outputs.download-path}}
