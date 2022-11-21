@@ -24,7 +24,7 @@
 6. Click `Run workflow`
 7. Click `Run md2apkg converter` beneath `workflow runs`
 8. Click `flashcards` under `Artifacts produced during runtime`
-  - This will initiate a download of the `.zip` file containing the `flashcards.apkg` Anki flashcard deck, which you just built from `flashcards.md` in the previous steps
+  - This will initiate a download of the `.zip` file containing the `Deck.apkg` Anki flashcard deck, which you just built from you `.md` files in the previous steps
   - You can then import your `Deck.apkg` directly into Anki using the desktop or mobile app (you'll just need to unzip/extract it after downloading)
 
 ## Who is this for?
