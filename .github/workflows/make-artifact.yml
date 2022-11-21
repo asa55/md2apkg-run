@@ -10,15 +10,33 @@ jobs:
     steps:
       - name: step-git-checkout
         uses: actions/checkout@v3
+      - name: step-define-package-json
+        run: |
+          touch package.json
+          printf '{ "dependencies": { "md2apkg": "^1.3.0" } }' >> package.json
+          npm install
       - name: step-use-node-LTS
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
           cache: 'npm'
+      - name: step-run-preprocessor
+        run: |
+          touch cat.md
+          cat index.md >> cat.md;
+          printf "\n\n" >> cat.md;
+          find ./**.md ! -path ./cat.md ! -path ./.github/README.md | while read _file; do 
+            _path=${_file%\/*};
+            _tag=$(echo "$_path" | sed "s/\//::/g" | sed "s/\.:://g");
+            _tag="\<\!\-\- md2apkg tags '$_tag' \-\-\>";
+            sed -i "\@##@a $_tag" $_file;
+            printf "\n\n" >> $_file;
+            cat $_file >> cat.md
+          done
       - name: step-run-npm-commands
         run: |
           npm ci
-          npm run build
+          npx md2apkg -o flashcards.apkg cat.md
       - name: step-upload-artifacts
         uses: actions/upload-artifact@v3
         id: upload
