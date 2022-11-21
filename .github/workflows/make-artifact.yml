@@ -11,7 +11,7 @@ jobs:
       - name: step-define-package-json
         run: |
           touch package.json
-          '{ "dependencies": { "md2apkg": "^1.3.0" } }' >> package.json
+          printf '{ "dependencies": { "md2apkg": "^1.3.0" } }' >> package.json
       - name: step-git-checkout
         uses: actions/checkout@v3
       - name: step-use-node-LTS
