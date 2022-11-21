@@ -2,7 +2,7 @@
 
 ## First flashcard
 
-(front of card) This flashcard will not be tagged, because it is in `index.md`
+(front of card) This flashcard will not be tagged, because it is directly underneath the `flashcards` folder. you can create `.md` files and folders underneath `flashcards`. Filenames are generally ignored, but directory names are used to automatically apply tags to all of the flashcards defined inside them.
 
 %
 
@@ -14,7 +14,7 @@ You can define more than one flashcard in a `.md` file in this way. Or you can c
 
 %
 
-One nice feature of `md2apkg-action` is that it basically just concatenates every `.md` file you define in this repository together (except for `README.md`), so whether you define flashcards in one or many `.md` files has the same effect when the deck is being built.
+One nice feature of `md2apkg-action` is that it basically just concatenates every `.md` file you define underneath `flashcards`, so whether you define flashcards in one or many `.md` files has the same effect when the deck is being built.
 
 ## Third flashcard
 
