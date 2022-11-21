@@ -1,7 +1,8 @@
 # md2apkg-action
 
-MIT License applies to all files in this repository
-[See also `md2apkg`'s license](https://github.com/Steve2955/md2apkg/blob/main/LICENSE.md)
+- This code works as described below, despite the terse file structure you see in this repo. The magic happens within the GitHub Action definition. 
+- MIT License applies to all files in this repository
+- [See also `md2apkg`'s license](https://github.com/Steve2955/md2apkg/blob/main/LICENSE.md)
 
 ## Quickstart Guide
 
