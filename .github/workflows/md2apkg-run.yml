@@ -31,7 +31,7 @@ jobs:
             _tag_="\<\!\-\- md2apkg tags \-\-\>"
             sed -i "\@##@a $_tag_" $_file
             while (echo $_tag | grep "::"); do
-              sed -i "s/[<]\!\-\- md2apkg tags /[<]\!\-\- md2apkg tags ${_tag#::*}/g" $_file
+              sed -i "s/[<]\!\-\- md2apkg tags /\<\!\-\- md2apkg tags ${_tag#::*}/g" $_file
               _tag="${_tag%::*}"
             done
             printf "\n\n" >> $_file
