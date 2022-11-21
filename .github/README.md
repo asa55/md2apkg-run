@@ -8,9 +8,16 @@
 
 1. Create a new repo from template (use the big green button above)
 2. Edit the Markdown file `Deck/index.md` to include your desired deck name
-  - Any flashcards defined within `index.md` (or in `.md` files adjacent to `index.md`) will not be tagged
-  - If you create any folders underneath `Deck/` with `.md` files inside, flashcards defined in these will have tags automatically applied based on the folder names you specify
-  - If you want to include images, place them anywhere in the folder hierarchy (even your own custom folders) and relative link to them using the `.md` syntax for images
+  i. Optionally, define flashcards within `Deck/index.md` per the [`md2apkg` docs](https://github.com/Steve2955/md2apkg)
+    - The first line in `index.md` must include a heading defining your desired deck name (e.g. `index.md` > line 1 > `# My Deck Name`)
+    - The subsequent lines can follow the `md2apkg` flashcard definition conventions
+  ii. Optionally, create your own `.md` files and folders underneath `Deck/`
+    - Flashcards defined within `index.md` (or in your own custom `.md` files adjacent to `index.md`) will *not* be tagged
+    - Flashcards defined within your own custom `.md` files in folders you create underneath `Deck/` *will* be tagged
+      - Filenames are ignored, directory names are used as tag names
+      - Nested directories are used to apply nested tags to flashcards
+  iii. You can append your own custom tags by using the `md2apkg` tagging syntax as discussed in the [`md2apkg` docs](https://github.com/Steve2955/md2apkg)
+  iv. If you want to include images, place them anywhere in the folder hierarchy (even your own custom folders) and relative link to them using [GitHub flavored `.md` syntax for images](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#images)
 3. Push your changes (i.e. commit directly to main branch)
 4. Click the `Actions` tab
 5. Click `Run md2apkg converter` beneath `All workflows`
@@ -18,7 +25,7 @@
 7. Click `Run md2apkg converter` beneath `workflow runs`
 8. Click `flashcards` under `Artifacts produced during runtime`
   - This will initiate a download of the `.zip` file containing the `flashcards.apkg` Anki flashcard deck, which you just built from `flashcards.md` in the previous steps
-  - You can then import your `flashcards.apkg` directly into Anki using the desktop or mobile app (you'll just need to unzip/extract it after downloading)
+  - You can then import your `Deck.apkg` directly into Anki using the desktop or mobile app (you'll just need to unzip/extract it after downloading)
 
 ## Who is this for?
 
