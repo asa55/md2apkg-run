@@ -7,7 +7,7 @@
 ## Quickstart Guide
 
 1. Create a new repo from template (use the big green button above)
-2. Edit `index.md` to include your desired deck name
+2. Edit the Markdown file `Deck/index.md` to include your desired deck name
   - Any flashcards defined within `index.md` (or in `.md` files adjacent to `index.md`) will not be tagged
   - If you create any folders underneath `Deck/` with `.md` files inside, flashcards defined in these will have tags automatically applied based on the folder names you specify
   - If you want to include images, place them anywhere in the folder hierarchy (even your own custom folders) and relative link to them using the `.md` syntax for images
