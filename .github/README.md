@@ -37,7 +37,7 @@ This is where `md2apkg-run` comes in. It is a thin wrapper around `md2apkg` that
 - Auto-tagging is currently the only way to apply tags (make subdirectories under `Deck/` and tagging is done for you)
   - `md2apkg` defines an approach to add your own custom tags. Doing so in flashcards defined in `md2apkg-run` will technically apply all the tags from the automation and the ones you define, but also some additional tags, e.g. a tag that looks like `<!--`.
 - The GitHub Actions workflow definition does a lot of heavy lifting that should really be split out into an action project that can be referenced as such from other projects
-  - Functionally this won't change the behavior of `md2apkg-run`, it's just good housekeeping. There comes a point where you have to decide if the juice is worth the squeeze, and I put a decent amount of time into building out v2.0.0 which works well for my intended purpose. If others are interested and show that interest by dropping me a line or starring this repository, I will use that as an indicator that it may be worth putting more time into this project.
+  - Functionally this won't change the behavior of `md2apkg-run`, it's just good housekeeping. There comes a point where you have to decide if the juice is worth the squeeze, and I put a decent amount of time into building out v2.0.0 which works well for my intended purpose. Consider giving this repo a ⭐ if you like what you see and want to let me know you're interested in seeing more from this project
   
 ## Important Note
   
