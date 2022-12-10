@@ -27,6 +27,8 @@ If you like Anki flashcards, and want to make your own custom decks using Markdo
 I didn't want to download or run `md2apkg` on my computer. GitHub Actions could easily simplify this last step.
 This is where `md2apkg-run` comes in. It is a thin wrapper around `md2apkg` that lets you write your flashcards and export them as Anki-compatible flashcard decks (`.apkg` files), all without ever leaving the GitHub web interface.
 
+`md2apkg-run` is also used heavily by me personally for every repository supporting the [`*-docs-as-flashcards` project](https://asa55.github.io/docs-as-flashcards/). (This was the primary driver that prompted me to write `md2apkg-run` in the first place).
+
 ## What does it do?
 
 1. You (the user) manually create subfolders underneath `Deck/` with `.md` files inside. (Note: No spaces in your subfolder names)
